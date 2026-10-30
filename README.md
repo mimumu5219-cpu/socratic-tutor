@@ -1,6 +1,6 @@
 # Socratic Tutor · 苏格拉底式对话学习 Skill
 
-一个让 AI 扮演苏格拉底式导师、通过「讲解 + 提问」把任意主题教到真正理解的可安装 Skill（DoubaoWork / 豆包工作）。
+一个让 AI 扮演苏格拉底式导师、通过「讲解 + 提问」把任意主题教到真正理解的可安装 Skill。**平台无关，适用于所有支持 Skill 机制的 AI 工作台。**
 
 ## 核心特点
 
@@ -14,7 +14,7 @@
 
 ## 快速开始
 
-在豆包工作（DoubaoWork）里直接对助手说：
+在任意支持 Skill 机制的 AI 工作台 / 助手中，直接对助手说：
 
 - 「我想学经济学中的供需关系」
 - 「教我 Python 列表」
@@ -43,6 +43,7 @@ Skill 会自动进入学习流程：**检查存档 → 询问是否上传材料 
 ```
 socratic-tutor/
 ├── SKILL.md                # 主指令：触发条件、完整流程、规则
+├── README.md               # 项目说明（本文件）
 ├── references/
 │   ├── personas.md         # 6 张综合人设卡（男女版本）+ 扩展指南
 │   └── report-guide.md     # 图片学习报告生成规范
@@ -52,15 +53,22 @@ socratic-tutor/
 
 ## 安装
 
-1. 将本仓库的 `socratic-tutor/` 文件夹复制到 DoubaoWork 的 skills 目录（如 `~/.user_skills/`）
-2. 重启 DoubaoWork（或刷新 Skill 列表）后即可触发
+1. 将本仓库的 `socratic-tutor/` 文件夹复制到你所用 AI 工作台的 skills 目录（常见位置：`~/.user_skills/`、`~/.claude/skills/`、`~/.cursor/skills/` 或工作区 skills 目录，以你使用的平台为准）
+2. 重启 / 刷新工作台，使其加载该 Skill
 3. 直接说出学习意图（如「我想学 XX」）即可开始
 
 ## 数据与存档
 
-- 学习进度存档：`~/DoubaoWork/学习存档/<主题>.md`
-- 图片学习报告：`~/DoubaoWork/学习存档/<主题>-报告.png`
+- 学习进度存档：`~/.socratic-tutor/存档/<主题>.md`
+- 图片学习报告：`~/.socratic-tutor/存档/<主题>-报告.png`
 - 存档内容：模块进度、掌握度评分（0-100）、薄弱点清单、下次续接点
+- 旧版存档路径 `~/DoubaoWork/学习存档/` 仍兼容读取
+
+## 平台兼容性
+
+- 本 Skill 不依赖任何特定 AI 平台
+- 依赖环境提供的能力（网络检索 / 视频搜索 / 图片渲染）按需降级：有则增强讲解效果，无则保持纯文字讲解
+- 存档路径与工具调用均为跨平台通用约定，可直接在各工作台使用
 
 ## 使用场景
 
